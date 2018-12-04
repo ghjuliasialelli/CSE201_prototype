@@ -16,8 +16,8 @@ int main(int, char **)
 		curlpp::Cleanup myCleanup;
 
 		// Set the URL.
-		curlpp::options::Url myUrl(std::string("http://inspirehep.net/textmining/?ln=en&fbclid=IwAR1JJVUiVazrFK6hgM_gWiPJQw1eP_wLWWC7bnjMrg6BqQ-EObuo2Acj048"));
-		
+		//curlpp::options::Url myUrl(std::string("http://inspirehep.net/textmining/?ln=en&fbclid=IwAR1JJVUiVazrFK6hgM_gWiPJQw1eP_wLWWC7bnjMrg6BqQ-EObuo2Acj048"));
+		curlpp::options::Url myUrl(std::string("http://export.arxiv.org/api/query?search_query=all:electron&start=0&max_results=1")) ; 
 		// Our request to be sent.
 		curlpp::Easy myRequest;
 
