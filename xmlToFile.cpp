@@ -1,7 +1,15 @@
 /* First draft of XML parsing from an url. For now, it std out the line where the element was found.
 Goal : make it write into a file ? 
 
-to compile : use the g++ flags: `pkg-config --cflags glibmm-2.4 libxml++-2.6 --libs` .
+To Compile : 
+when compiling like this : g++ `-std=c++11 pkg-config --cflags glibmm-2.4 libxml++-2.6 --libs` xmlToFile.cpp -o main
+i get 2 implicit instantiation of undefined template errors and 'libxml++/libxml++.h' file not found
+
+when compiling like this : g++ xmlToFile.cpp -o main `pkg-config --cflags --libs libxml++-2.6` -std=c++11
+i get a ton of warning: '_______' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+and Undefined symbols for architecture x86_64
+
+
 you need to have installed curlpp, glibmm and libxml++ */ 
 
 /* shouldnt need those headers 
