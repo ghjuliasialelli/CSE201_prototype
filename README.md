@@ -10,8 +10,8 @@ allows us to write the content of an URL onto a file. By default, the file is .x
 To use it (everything is written in the cpp file) : 
 
 
-compile with : g++ file.cpp -o main `pkg-config --libs libcurl`
-
+g++ file.cpp -o main `pkg-config --libs libcurl`   
+  
 
 ./main http://export.arxiv.org/api/query?search_query=au:Einstein
 
