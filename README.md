@@ -1,6 +1,12 @@
 # CSE201_prototype
 
 Important files : 
+---
+
+arXiv.md : 
+----
+Description of arXiv's API and how to use it to meet our needs.
+
 
 file.cpp : 
 ----
