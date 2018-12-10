@@ -21,6 +21,11 @@ Filter queries :
 ---
 
 - Searching using the author's name : http://export.arxiv.org/api/query?search_query=au:Einstein
+- Publication's id : http://export.arxiv.org/api/query?search_query=hep-ph/9807350
+            
+            with "hep-ph" standing for the name of the subcategory
+            and "9807350" standing for the identification number of the article
+           
 - Title : ".../search_query=ti:blabla"
 - `id_list`: ".../search_query=id_list:blabla"
 - Journal reference : ".../search_query=jr:blabla"
