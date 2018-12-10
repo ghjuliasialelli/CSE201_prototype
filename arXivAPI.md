@@ -40,6 +40,10 @@ Filter queries :
   `sortOrder` can be either "ascending" or "descending"
 
 
+To obtain metadata from the article's ID : 
+http://export.arxiv.org/api/query?id_list=1812.03164
+
+
 Calling the API :
 ---
 - incorporate a 3 second delay in your code
