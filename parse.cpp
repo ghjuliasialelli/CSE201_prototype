@@ -17,15 +17,13 @@ using namespace rapidxml;
 using namespace std;
 
 // converting a string to a char pointer 
+// we're not actually using this 
 const char* stringToCharpt(std::string str) {
     const char* c = str.c_str() ; 
     return c ;
 }
 
 // converting a string to a char vector
-// maybe instead of doing this i could directly put this in urlToString which would make it urlToCharVector ?
-// i dont know which one is the most efficient 
-
 std::vector<char> stringToCharVct(std::string s) {
     std::vector<char> v(   s.begin(), s.end()   ); 
     return v ; 
@@ -84,40 +82,45 @@ std::string urlToString(const char* url) {
 }
 
 
+// make one parseAuthors (from id) and one parseIDS (from author)
+
 
 void parseString(std::string xmlString){
+
     // convert xmlString to vector<char>
     vector<char> url = stringToCharVct(xmlString) ; 
+
     // we need it to be a null-terminated string : 
     url.push_back('\0'); 
 
     xml_document<> doc; 
 
-    /* 
-    const char* xmldata = stringToCharpt(xmlString) ;
-
-    // Convert xml to vector<char>
-    vector<char> buffer(xmldata, xmldata + xmldata.length());
-    // we need it to be a null-terminated string : 
-	buffer.push_back('\0');
-    */ 
     // parse the buffer 
 	doc.parse<0>(&url[0]);
+
 
     // Find our root node
 	xml_node<> *pRoot = doc.first_node("feed");
 	xml_node<> *pEntry =pRoot->first_node("entry");
+
 	xml_node<> *pID =pEntry->first_node("id"); //get the id
 	std::cout << pID->value()<<std::endl;
+
     xml_node<> *pUpdate =pEntry->first_node("updated"); //get the date
     std::cout << pUpdate->value()<<std::endl;
+
+    //get the authors' name
 	for(xml_node<> *pAuthor=pEntry->first_node("author"); pAuthor; pAuthor=pAuthor->next_sibling("author"))
 	{
-		xml_node<> *pName=pAuthor->first_node("name"); //get the author names
+		xml_node<> *pName=pAuthor->first_node("name"); 
 		std::cout<< pName->value() <<std::endl; 
 	}
 
 }
+
+// make one whos
+
+
 
 
 
