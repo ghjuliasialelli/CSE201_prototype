@@ -43,6 +43,8 @@ Filter queries :
 To obtain metadata from the article's ID : 
 http://export.arxiv.org/api/query?id_list=1812.03164
 
+http://export.arxiv.org/api/query?id_list=0710.5765,0710.5769;max_results=2
+
 
 Calling the API :
 ---
